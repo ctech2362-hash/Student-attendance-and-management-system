@@ -52,7 +52,7 @@ const login = async (req, res, next) => {
 
     const token = jwt.sign(
       { id: admin.id, username: admin.username, email: admin.email },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'super_secret_jwt_key_attendance_system_2026',
       { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
     );
 
